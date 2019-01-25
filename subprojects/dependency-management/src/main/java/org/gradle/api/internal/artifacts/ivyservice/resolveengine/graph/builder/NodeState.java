@@ -492,9 +492,7 @@ public class NodeState implements DependencyGraphNode {
 
     void resetSelectionState() {
         if (previousTraversalExclusions != null) {
-            previousTraversalExclusions = null;
-            outgoingEdges.clear();
-            virtualEdges = null;
+            removeOutgoingEdges();
             resolveState.onFewerSelected(this);
         }
     }
